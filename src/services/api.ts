@@ -19,23 +19,6 @@ export const getPokemonList = async (limit: number = 251): Promise<NamedAPIResou
   }
 }
 
-// export const getPokemonList = async (limit: number = 251): Promise<Pokemon[]> => {
-//   try {
-//         const list = await getPokemonLightList(limit)
-//         let pokemons = new Array as Pokemon[]
-//         for (const element of list) {
-//             const id = getPokemonIdFromUrl(element.url)
-//             const pokemon = await getPokemonDetails(id)
-//             pokemons.push(pokemon ?? {} as Pokemon)
-//         }
-//         console.log(pokemons)
-//         return pokemons
-//   } catch (error) {
-//     console.error("Error fetching pokemon list:", error)
-//     return []
-//   }
-// }
-
 export const getPokemonDetailsById = async (id: string): Promise<Pokemon | null> => {
   try {
     const response = await fetch(`${API_URL}/pokemon/${id}`)

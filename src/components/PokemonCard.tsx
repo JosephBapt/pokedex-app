@@ -8,7 +8,6 @@ import {
     CardMedia, 
     Typography, 
     IconButton, 
-    // Box,
     Chip,
 } from '@mui/material'
 import FavoriteIcon from '@mui/icons-material/Favorite'
@@ -92,7 +91,6 @@ export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
                         width: '100%',
                         objectFit: 'contain',
                         filter: 'drop-shadow(5px 5px 5px rgba(0,0,0,0.3))',
-                        // display: !imageLoaded ? 'none' : 'inherit'
                     }}
                     loading="lazy" 
                 />

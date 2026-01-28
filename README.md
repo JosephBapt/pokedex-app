@@ -15,7 +15,7 @@ para temas (claro/oscuro) y gestión de favoritos.
 Búsqueda en tiempo real y paginación personalizada.
 ![Home Screenshot](./public/screenshots/home-screenshot.png)
 
-### Detalle del Pokémon
+### Detalles del Pokémon
 Estadísticas, habilidades, movimientos y alternancia de versión Shiny.
 ![Detalle Screenshot](./public/screenshots/detalles-screenshot.png)
 
