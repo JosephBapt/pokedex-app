@@ -13,15 +13,15 @@ para temas (claro/oscuro) y gestión de favoritos.
 
 ### Pantalla Principal (Home)
 Búsqueda en tiempo real y paginación personalizada.
-![Home Screenshot](./public/home-screenshot.png)
+![Home Screenshot](./public/screenshots/home-screenshot.png)
 
 ### Detalle del Pokémon
 Estadísticas, habilidades, movimientos y alternancia de versión Shiny ✨.
-![Detalle Screenshot](./public/detalles-screenshot.png)
+![Detalle Screenshot](./public/screenshots/detalles-screenshot.png)
 
 ### Gestión de Favoritos
 Guarda tus Pokémon preferidos localmente.
-![Favoritos Screenshot](./public/favoritos-screenshot.png)
+![Favoritos Screenshot](./public/screenshots/favoritos-screenshot.png)
 
 ## ✨ Características Principales
 
