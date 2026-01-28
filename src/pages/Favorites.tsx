@@ -8,7 +8,8 @@ import {
   Typography,
   Grid,
   Button,
-  Paper
+  Paper,
+  Box
 } from '@mui/material'
 import { useState } from 'react'
 import { Navigation } from '../components/Navigation'
@@ -70,7 +71,9 @@ export const Favorites = () => {
 
                 {
                     favorites.length !== 0 ? 
-                        <Navigation size={favorites.length} onChange={(_, value) => {setNavigationWrapper(value)}}/>
+                        <Box sx={{marginTop: {xs: 3, md: 0}}}>
+                            <Navigation size={favorites.length} onChange={(_, value) => {setNavigationWrapper(value)}}/>
+                        </Box>
                         : <></>
                 }
         </Container>
