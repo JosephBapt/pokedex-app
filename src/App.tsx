@@ -7,7 +7,7 @@ import { Container } from '@mui/material'
 
 function App () {
   return (
-    <Container maxWidth='lg' sx={{ mt: 4 }}>
+    <Container maxWidth='lg' sx={{ mt: { xs: 0, md: 4 }, px: { xs: 0, md: '16px' } }}>
         <Navbar/>
         <Routes>
           <Route path='/' element={<Home />} />

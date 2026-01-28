@@ -17,7 +17,7 @@ export const Navbar = () => {
     const isActive = (path: string) => location.pathname === path
 
     return (
-        <AppBar position='sticky' color='default' sx={{ borderBottom: 1, borderColor: 'divider', paddingX: 2}}>
+        <AppBar position='sticky' color='default' sx={{ borderBottom: 1, borderColor: 'divider', paddingX: { xs: 2, md: 2}, width: { xs: '100%'}}}>
             <Toolbar disableGutters>
                 <Box
                     sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer', flexGrow: 1 }}
@@ -68,18 +68,20 @@ export const Navbar = () => {
                             localStorage.setItem('navigation', '1') 
                             navigate('/')}
                         }
-                        startIcon={<HomeIcon/>}
                     >
-                        <Box 
-                            component="span" 
-                            sx={{ 
-                                display: { xs: 'none', sm: 'flex' },
-                                alignItems: 'center',
-                                height: '100%',
-                                pt: '2px'
-                            }}
-                        >
-                            Home
+                        <Box sx={{ display: 'flex', justifyContent: 'space-evenly'}}>
+                            <HomeIcon sx={{marginRight: {xs: '0px', md:'8px'}, marginLeft: {xs: '0px', md: '-4px'} }}/>
+                            <Box 
+                                component="span" 
+                                sx={{ 
+                                    display: { xs: 'none', sm: 'flex' },
+                                    alignItems: 'center',
+                                    height: '100%',
+                                    pt: '2px'
+                                }}
+                            >
+                                Home
+                            </Box>
                         </Box>
                     </Button>
 
@@ -95,22 +97,22 @@ export const Navbar = () => {
                             localStorage.setItem('navigation', '1') 
                             navigate('/favorites')}
                         }
-                        startIcon={
-                            <Badge badgeContent={favorites.length} color='error'>
+                    >
+                        <Box sx={{ display: 'flex', justifyContent: 'space-evenly'}}>
+                            <Badge badgeContent={favorites.length} color='error' sx={{marginRight: {xs: '0px', md:'8px'}, marginLeft: {xs: '0px', md: '-4px'} }}>
                                 <FavoriteIcon />
                             </Badge>
-                        }
-                    >
-                        <Box 
-                            component="span" 
-                            sx={{ 
-                                display: { xs: 'none', sm: 'flex' },
-                                alignItems: 'center',
-                                height: '100%',
-                                pt: '2px'
-                            }}
-                        >
-                            Favoritos
+                            <Box 
+                                component="span" 
+                                sx={{ 
+                                    display: { xs: 'none', sm: 'flex' },
+                                    alignItems: 'center',
+                                    height: '100%',
+                                    pt: '2px'
+                                }}
+                            >
+                                Favoritos
+                            </Box>
                         </Box>
                     </Button>
                 </Box>

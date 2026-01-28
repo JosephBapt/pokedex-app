@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 import { 
     Container, 
     Grid, 
@@ -11,21 +11,18 @@ import {
     Button,
     CircularProgress,
     IconButton,
-    // Divider,
-    // IconButton
-} from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import HeightIcon from '@mui/icons-material/Height';
-import ScaleIcon from '@mui/icons-material/Scale';
-import StarIcon from '@mui/icons-material/Star';
+} from '@mui/material'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
+import HeightIcon from '@mui/icons-material/Height'
+import ScaleIcon from '@mui/icons-material/Scale'
+import StarIcon from '@mui/icons-material/Star'
 
-import { getPokemonDetailsById } from '../services/api';
-import { type Pokemon } from '../types/pokemon'; // La interfaz completa
-import { useFavorites } from '../context/FavoritesContext';
+import { getPokemonDetailsById } from '../services/api'
+import { type Pokemon } from '../types/pokemon'
+import { useFavorites } from '../context/FavoritesContext'
 
-// Colores oficiales para los tipos (UX visual)
 const typeColors: Record<string, string> = {
     fire: '#F08030',
     water: '#6890F0',
@@ -44,48 +41,48 @@ const typeColors: Record<string, string> = {
     steel: '#B8B8D0',
     fairy: '#EE99AC',
     normal: '#A8A878',
-};
+}
 
 export const PokemonDetails = () => {
-    const { id } = useParams<{ id: string }>();
-    const navigate = useNavigate();
-    const [pokemon, setPokemon] = useState<Pokemon | null>(null);
-    const [loading, setLoading] = useState(true);
+    const { id } = useParams<{ id: string }>()
+    const navigate = useNavigate()
+    const [pokemon, setPokemon] = useState<Pokemon | null>(null)
+    const [loading, setLoading] = useState(true)
 
-    const { addFavorite, removeFavorite, isPokemonFavorite } = useFavorites();
-    const isFavorite = id ? isPokemonFavorite(id) : false;
+    const { addFavorite, removeFavorite, isPokemonFavorite } = useFavorites()
+    const isFavorite = id ? isPokemonFavorite(id) : false
 
     const [isShinySelected, setIsShinySelected] =  useState(false)
 
     useEffect(() => {
         const fetchDetails = async () => {
-            if (!id) return;
-            setLoading(true);
-            const data = await getPokemonDetailsById(id);
-            setPokemon(data);
-            setLoading(false);
-        };
-        fetchDetails();
-    }, [id]);
-    const handleToggleFavorite = () => {
-        if (!pokemon || !id) return;
-        if (isFavorite) {
-            removeFavorite(id);
-        } else {
-            addFavorite({ name: pokemon.name, url: `https://pokeapi.co/api/v2/pokemon/${id}/` });
+            if (!id) return
+            setLoading(true)
+            const data = await getPokemonDetailsById(id)
+            setPokemon(data)
+            setLoading(false)
         }
-    };
+        fetchDetails()
+    }, [id])
+    const handleToggleFavorite = () => {
+        if (!pokemon || !id) return
+        if (isFavorite) {
+            removeFavorite(id)
+        } else {
+            addFavorite({ name: pokemon.name, url: `https://pokeapi.co/api/v2/pokemon/${id}/` })
+        }
+    }
 
     if (loading) {
         return (
             <Box sx={{ display: 'flex', justifyContent: 'center', mt: 10 }}>
                 <CircularProgress />
             </Box>
-        );
+        )
     }
 
     if (!pokemon) {
-        return <Container><Typography variant="h5">Pokémon no encontrado</Typography></Container>;
+        return <Container><Typography variant="h5">Pokémon no encontrado</Typography></Container>
     }
 
     return (
@@ -126,19 +123,19 @@ export const PokemonDetails = () => {
                                     }}
                                 />
 
-                                    <IconButton 
-                                        onClick={() => {setIsShinySelected(!isShinySelected)}}
-                                        size='large'
-                                        sx={{ 
-                                            position: 'absolute', 
-                                            top: 0, 
-                                            right: 8, 
-                                            zIndex: 10,
-                                            color: isShinySelected ? 'gold' : 'inherit',
-                                        }}
-                                    >
-                                        <StarIcon sx={{fontSize: '60px'}}/>
-                                    </IconButton>
+                                <IconButton 
+                                    onClick={() => {setIsShinySelected(!isShinySelected)}}
+                                    size='large'
+                                    sx={{ 
+                                        position: 'absolute', 
+                                        top: 0, 
+                                        right: 8, 
+                                        zIndex: 10,
+                                        color: isShinySelected ? 'gold' : 'inherit',
+                                    }}
+                                >
+                                    <StarIcon sx={{fontSize: '60px'}}/>
+                                </IconButton>
                             </Box>
 
                             <Typography variant="h3" sx={{ textTransform: 'capitalize', fontWeight: 'bold' }}>
@@ -283,5 +280,5 @@ export const PokemonDetails = () => {
                 </Grid>
             </Paper>
         </Container>
-    );
-};
+    )
+}
