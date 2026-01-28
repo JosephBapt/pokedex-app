@@ -71,7 +71,7 @@ export const Favorites = () => {
 
                 {
                     favorites.length !== 0 ? 
-                        <Box sx={{marginTop: {xs: 3, md: 0}}}>
+                        <Box sx={{ marginTop: 3 }}>
                             <Navigation size={favorites.length} onChange={(_, value) => {setNavigationWrapper(value)}}/>
                         </Box>
                         : <></>

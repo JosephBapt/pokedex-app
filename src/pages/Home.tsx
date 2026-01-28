@@ -81,7 +81,7 @@ export const Home = () => {
                 </Box>
             )}
 
-            <Box sx={{marginTop: {xs: 7, md: 0}}}>
+            <Box sx={{marginTop: 7}}>
                 <Navigation size={filteredPokemons.length} onChange={(_, value) => {setNavigationWrapper(value)}}/>
             </Box>
         </Container>
