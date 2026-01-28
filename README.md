@@ -1,4 +1,4 @@
-# 🔴 Modern Pokédex App
+# 🔴 Pokédex
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
@@ -16,7 +16,7 @@ Búsqueda en tiempo real y paginación personalizada.
 ![Home Screenshot](./public/screenshots/home-screenshot.png)
 
 ### Detalle del Pokémon
-Estadísticas, habilidades, movimientos y alternancia de versión Shiny ✨.
+Estadísticas, habilidades, movimientos y alternancia de versión Shiny.
 ![Detalle Screenshot](./public/screenshots/detalles-screenshot.png)
 
 ### Gestión de Favoritos
