@@ -114,8 +114,8 @@ export const PokemonDetails = () => {
                                     component="img"
                                     src={
                                         isShinySelected 
-                                            ? pokemon.sprites.other?.['official-artwork'].front_shiny 
-                                            : pokemon.sprites.other?.['official-artwork'].front_default
+                                            ? pokemon.sprites.other?.['official-artwork'].front_shiny ?? ''
+                                            : pokemon.sprites.other?.['official-artwork'].front_default ?? ''
                                     }
                                     alt={pokemon.name}
                                     sx={{ 

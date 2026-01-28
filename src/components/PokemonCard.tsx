@@ -10,7 +10,6 @@ import {
     IconButton, 
     // Box,
     Chip,
-    Skeleton
 } from '@mui/material'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
@@ -72,9 +71,9 @@ export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
                     '&:hover': { 
                         backgroundColor: (theme) => {
                             if (theme.palette.mode === 'light')
-                                darken(theme.palette.background.default, 0.2)
+                                return  darken(theme.palette.background.default, 0.2)
                                 else
-                                lighten(theme.palette.background.default, 0.2)
+                                return lighten(theme.palette.background.default, 0.2)
                         } 
                     }
                 }}
